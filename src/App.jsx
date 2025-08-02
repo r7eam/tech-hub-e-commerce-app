@@ -19,25 +19,29 @@ const AppContent = () => {
     palette: {
       mode: darkMode ? 'dark' : 'light',
       primary: {
-        main: '#CCDC28',
-        contrastText: '#000000',
+        main: darkMode ? '#6B9DD6' : '#7BA7D1',
+        contrastText: darkMode ? '#ffffff' : '#ffffff',
       },
       secondary: {
-        main: darkMode ? '#CCDC28' : '#1976d2',
+        main: darkMode ? '#8BB8A8' : '#A3C4BC',
       },
       background: {
-        default: darkMode ? '#121212' : '#ffffff',
-        paper: darkMode ? '#1e1e1e' : '#ffffff',
+        default: darkMode ? '#1A1F2E' : '#F8FAFB',
+        paper: darkMode ? '#252B3D' : '#FFFFFF',
+      },
+      text: {
+        primary: darkMode ? '#E8EDF5' : '#2C3E50',
+        secondary: darkMode ? '#B8C5D6' : '#5D7285',
       },
     },
     components: {
       MuiButton: {
         styleOverrides: {
           contained: {
-            backgroundColor: '#CCDC28',
-            color: '#000000',
+            backgroundColor: darkMode ? '#6B9DD6' : '#7BA7D1',
+            color: '#ffffff',
             '&:hover': {
-              backgroundColor: '#b8c424',
+              backgroundColor: darkMode ? '#5A8BC4' : '#6B95BF',
             },
           },
         },
@@ -45,8 +49,8 @@ const AppContent = () => {
       MuiAppBar: {
         styleOverrides: {
           root: {
-            backgroundColor: darkMode ? '#1e1e1e' : '#CCDC28',
-            color: darkMode ? '#ffffff' : '#000000',
+            backgroundColor: darkMode ? '#252B3D' : '#7BA7D1',
+            color: '#ffffff',
           },
         },
       },
@@ -61,6 +65,7 @@ const AppContent = () => {
           <Navigation />
           <ProtectedRoute>
             <Routes>
+              <Route path="/products/:id" element={<Products />} />
               <Route path="/products" element={<Products />} />
               <Route path="/users" element={<Users />} />
               <Route path="/cart" element={<Cart />} />

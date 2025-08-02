@@ -12,8 +12,8 @@ import { Link, useNavigate } from 'react-router';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { useState, useEffect } from 'react';
-import techHubLight from '../assets/techhub-light.png';
-import techHubDark from '../assets/techhub-dark.png';
+import techHubLight from '../assets/dark-logo.svg';
+import techHubDark from '../assets/light-logo.svg';
 
 const Navigation = () => {
   const { user, logout } = useAuth();
